@@ -7,8 +7,16 @@
 </head>
 <header>
   <a href="index.html"><h1>Blog</h1></a>
+  <a href="login.html">Iniciar sesión</a>
+  <a href="miperfil.html">Mi perfil</a>
   <nav>
-    <input id="search" text>
+   <form action="" method="post" target="_self">
+    <input id="search" type="text" placeholder="Buscar...">
+    <input type="button" value="Buscar">
+   </form>
+  </nav>
+</header>
+   <aside>
     <ul>
       <li><a href="index.html">Principal</a></li>
       <li><a href="popular.html">Popular</a></li>
@@ -16,6 +24,10 @@
     <label for:="Tema">Tema</label>
     <select id="Tema" name="Tema">
       <option value="Tecnología">Tecnología</option>
-  </nav>
-</header>
+      <option value="Recetas">Recetas</option>
+      <option value="Series y peliculas">Series y peliculas</option>
+    </select>
+    <a href="temanuevo.html">Crear tema</a>
+    <a href="report.html">Reportar usuario</a>
+   </aside>
 </html>
