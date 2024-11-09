@@ -1,33 +1,112 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <title>blog</title>
 </head>
-<header>
-  <a href="index.html"><h1>Blog</h1></a>
-  <a href="login.html">Iniciar sesión</a>
-  <a href="miperfil.html">Mi perfil</a>
-  <nav>
-   <form action="" method="post" target="_self">
-    <input id="search" type="text" placeholder="Buscar...">
-    <input type="button" value="Buscar">
-   </form>
-  </nav>
-</header>
-   <aside>
-    <ul>
-      <li><a href="index.html">Principal</a></li>
-      <li><a href="popular.html">Popular</a></li>
-    </ul>
-    <label for:="Tema">Tema</label>
-    <select id="Tema" name="Tema">
-      <option value="Tecnología">Tecnología</option>
-      <option value="Recetas">Recetas</option>
-      <option value="Series y peliculas">Series y peliculas</option>
-    </select>
-    <a href="temanuevo.html">Crear tema</a>
-    <a href="report.html">Reportar usuario</a>
-   </aside>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="# "><img src="/imagenes/logo2.png" alt="Logotipo web" width="300" height="200"></a>
+            <div class="busqueda">
+                <input type="text" placeholder="Buscar">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            <nav class="navigation">
+                <ul class="lista">
+                    <li><a href="/templates/index.html">Inicio </a></li>
+                    <li><a href="#">Blog </a></li>
+                    <li><a href="/templates/miperfil.html">Mi perfil </a></li>
+                    <li><a href="#">Contacto </a></li>
+                    <li><a href="/templates/login.html">Iniciar sesion</a></li>
+                    <li><a href="/templates/register.html">Registrarse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <h1>Blog</h1>
+            <div class="publicacion1">
+                <h3>Mi nueva pc!!!</h3>
+                <p>Esta es mi nueva pc!!, miren como se ve por dentro</p>
+                <img src="/imagenes/pc.jpeg" alt="fotopcejemplo">
+                <p>18/05/2024</p>
+                <hr>
+                <h4>Comentarios:</h4>
+                <textarea class="" name="" id="" cols="40" rows="5"></textarea>
+            </div>
+            <div class="publicacion2">
+                <h3>Mi gato</h3>
+                <p>Hola, les quiero presentar a mi gato se llama Raul!</p>
+                <img src="/imagenes/gato.png" alt="fotogatoejemplo">
+                <p>08/07/2024</p>
+                <hr>
+                <h4>Comentarios:</h4>
+                <textarea class="" name="" id="" cols="40" rows="5"></textarea>
+            </div>
+            <div class="publicacion3">
+                <h3>Top de libros favoritos</h3>
+                <p>Este es mi top 3 de libros favoritos actualmente <br>
+                    - Juramentada <br>
+                    - El camino de los Reyes <br>
+                    - El heroe de las Eras <br>
+                </p>
+                <img src="/imagenes/libro.png" alt="fotolibrosejemplo">
+                <p>07/09/2024</p>
+                <hr>
+                <h4>Comentarios:</h4>
+                <textarea class="" name="" id="" cols="40" rows="5"></textarea>
+            </div>
+        </div>    
+    </main>
+    <aside class="aside">
+        <div class="container">    
+            <ul>
+                <li><p>Categorias</p></li>
+                <li><a href="#">Comida</a></li>
+                <li><a href="#">Libros</a></li>
+                <li><a href="#">Animales</a></li>
+                <li><a href="#">Tecnología</a></li>
+            </ul>
+            <ul>
+                <li><p>Ultimos Articulos</p></li>
+                <li><a href="#">Ordenar por fecha</a></li>
+                <li><a href="#">Ordenar por comentarios</a></li>
+            </ul>
+            <div class="social">
+                <div> 
+
+                    <p>Instagram</p>
+                    <a href="https://www.instagram.com"><img src="/imagenes/instragram.png" alt="logoinstagram"></a>
+                </div>
+                <div> 
+                    <p>Twitter  </p>
+                    <a href="https://x.com/home"><img src="/imagenes/xlogo.png" alt="logoinstagram"></a>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <footer class="foot">
+        <div class="footer-content">
+            <p>© <strong>2023 Calignis</strong>. <br> Todos los derechos reservados. <br>
+            <a href="politica-privacidad.html">Política de Privacidad</a></p>
+            <div class="sitemap">
+                <h4>Mapa del Sitio</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="/templates/miperfil.html">Mi perfil</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+</footer>
+</body>
 </html>
