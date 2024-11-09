@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
@@ -13,7 +13,7 @@
 <body>
     <header class="header">
         <div class="container">
-            <a href="# "><img src="/imagenes/logo2.png" alt="Logotipo web" width="300" height="200"></a>
+            <a href="# "><img src="{{ url_for('static', filename='logo2.png') }}" alt="Logotipo web" width="300" height="200"></a>
             <div class="busqueda">
                 <input type="text" placeholder="Buscar">
                 <i class="fa fa-search" aria-hidden="true"></i>
@@ -25,7 +25,7 @@
                     <li><a href="/templates/miperfil.html">Mi perfil </a></li>
                     <li><a href="#">Contacto </a></li>
                     <li><a href="/templates/login.html">Iniciar sesion</a></li>
-                    <li><a href="/templates/register.html">Registrarse</a></li>
+                    <li><a href="{{ url_for('user_bp.new_user_form') }}">Registrarse</a></li>
                 </ul>
             </nav>
         </div>
