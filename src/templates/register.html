@@ -3,22 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/register.css" />
+    <link rel="stylesheet" href="../static/register.css" />
     <title>Resgister</title>
   </head>
   <body>
     <section class="form-register">
       <h4>Register</h4>
-      <form method="post">
-        <input class="complete" type="text" name="names" id="names" placeholder="Put your name here"/>
-        <input class="complete" type="text" name="apellidos" id="apellidos" placeholder="Put your surname here"/>
-        <input class="complete" type="email" name="correo" id="correo" placeholder="Put your email here"/>
-        <input class="complete" type="password" name="contrasena" id="contrasena" placeholder="Put your password here"/>
-        <input class="buttons" type="submit" value="Registrarse" />
-        <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
-      </form>
-        <p><a href="/templates/login.html">¿Ya tengo una cuenta?</a></p>
-        <p><a href="#">Olvide mi Contraseña</a></p>
-      </section>
+      <input class="complete" type="text" name="user_name"  placeholder="Put your username here"/>
+      <input class="complete" type="email" name="email" placeholder="Put your email here"/>
+        <input class="complete" type="password" name="password"  placeholder="Put your password here"/>
+      <input class="complete" type="text" name="image_url">
+      <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+      <input class="buttons" type="submit" value="Registrarse" />
+      <p><a href="/templates/login.html">¿Ya tengo una cuenta?</a></p>
+      <p><a href="#">Olvide mi Contraseña</a></p>
+    </section>
   </body>
 </html>
