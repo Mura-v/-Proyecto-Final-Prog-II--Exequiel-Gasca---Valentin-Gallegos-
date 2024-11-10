@@ -4,29 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/register.css" />
-    <title>Resgister</title>
+    <title>Register</title>
   </head>
   <body>
     <section class="form-register">
       <h4>Register</h4>
-      <form method="POST" action="{{ url_for('user_bp.create_user') if not user else url_for('user_bp.update_user', user_id=user.id) }}">
-        <input class="complete" type="text" name="user_name"  placeholder="Put your username here" value="{{ user.user_name if user else '' }}"/>
-        <input class="complete" type="email" name="email" placeholder="Put your email here" value="{{ user.email if user else '' }}"/>
-        <input class="complete" type="password" name="password"  placeholder="Put your password here" value="{{ user.password if user else '' }}"/>
-        <input class="complete" type="url" name="image_url" value="{{ user.image_url if user else '' }}"/>
-        <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
-        <button class="buttons" type="submit">{{"Actualizar" if user else "Crear"}} </button>
-        {% if user %}
-        <!-- Formulario para eliminar usuario -->
-        <form method="POST" action="{{ url_for('user_bp.delete_user', user_id=user.id) }}">
-          <!-- Método DELETE utilizando un campo oculto -->
-          <input type="hidden" name="_method" value="DELETE">
-          <button class="buttons" type="submit">Borrar</button>
+      <form method="POST" action="{{ url_for('user_bp.create_user') }}">
+        <input class="complete" type="text" name="user_name" placeholder="Put your username here" value="{{ user.user_name if user else '' }}" />
+        <input class="complete" type="email" name="email" placeholder="Put your email here" value="{{ user.email if user else '' }}" />
+        <input class="complete" type="password" name="password" placeholder="Put your password here" />
+        <input class="complete" type="url" name="image_url" placeholder="Put your image URL here" value="{{ user.image_url if user else '' }}" />
+        
+        <p>Estoy de acuerdo con <a href="#">Términos y Condiciones</a></p>
+        
+        <!-- Botón de registro que redirige directamente al inicio de sesión -->
+        <form action="{{ url_for('user_bp.login') }}" method="get">
+          <button type="submit" class="btn btn-primary">Registrarse</button>
         </form>
-        {% endif %}
       </form>
-      <p><a href="/templates/login.html">¿Ya tengo una cuenta?</a></p>
-      <p><a href="#">Olvide mi Contraseña</a></p>
+
+      <p><a href="{{ url_for('user_bp.login') }}">¿Ya tienes una cuenta? Inicia sesión</a></p>
+      <p><a href="#">Olvidé mi Contraseña</a></p>
     </section>
   </body>
 </html>

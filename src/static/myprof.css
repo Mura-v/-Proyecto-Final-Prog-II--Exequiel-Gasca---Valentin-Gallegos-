@@ -1,39 +1,37 @@
-/* General de la página */
 body {
-  background-color: #121212;  /* Fondo negro */
+  background-color: #121212;
   font-family: 'Arial', sans-serif;
-  color: #E0E0E0;  /* Gris claro para el texto */
+  color: #E0E0E0;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column;  /* Flexbox para columnas */
-  height: 100vh;  /* Hace que el cuerpo ocupe toda la altura de la ventana */
+  flex-direction: column; 
+  height: 100vh;
 }
 
-/* Contenedor principal que ocupa todo el espacio disponible */
 .main-content {
   display: flex;
   flex-direction: column;
   flex: 1;
   padding: 20px;
-  margin-top: 200px;  /* Para que el contenido no quede debajo del perfil fijo */
+  margin-top: 200px;
 }
 
-/* Sección del perfil de usuario */
+
 section.form-register {
-  background-color: #1E1E1E;  /* Gris oscuro */
+  background-color: #1E1E1E;
   padding: 20px;
   border-radius: 10px;
   height: 160px;
   display: flex;
-  justify-content: space-around;  /* Coloca los elementos a los extremos */
-  align-items: center;  /* Centra verticalmente los elementos */
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;  /* Asegura que quede encima del contenido */
+  z-index: 10;
 }
 
 h4 {
@@ -48,10 +46,9 @@ p {
 }
 
 strong {
-  color: #B0B0B0;  /* Gris más claro */
+  color: #B0B0B0;
 }
 
-/* Formulario y botones */
 button {
   background-color: #333333;
   border: none;
@@ -84,7 +81,6 @@ img {
   border-radius: 50%;
 }
 
-/* Contenedor de publicaciones */
 .posts-container {
   display: flex;
   flex-direction: column;
@@ -99,7 +95,6 @@ h3 {
   margin-bottom: 20px;
 }
 
-/* Estilo para las publicaciones */
 .post {
   background-color: #1E1E1E;
   padding: 20px;
@@ -116,7 +111,7 @@ h3 {
 }
 
 .post p {
-  color: #B0B0B0;  /* Gris más claro */
+  color: #B0B0B0;
   font-size: 16px;
 }
 
@@ -127,7 +122,6 @@ h3 {
   margin-top: 10px;
 }
 
-/* Formulario para agregar un post */
 form#profileForm {
   background-color: #1E1E1E;
   padding: 20px;
@@ -140,8 +134,8 @@ form#profileForm {
 }
 
 form#profileForm input, form#profileForm textarea {
-  background-color: #121212;  /* Negro */
-  border: 1px solid #333333;  /* Gris oscuro */
+  background-color: #121212;
+  border: 1px solid #333333;
   color: #E0E0E0;
   font-size: 16px;
   width: 100%;
@@ -155,7 +149,6 @@ form#profileForm textarea {
   min-height: 100px;
 }
 
-/* Estilo para el formulario de eliminación de cuenta */
 form#deleteForm {
   text-align: center;
   margin-top: 20px;
@@ -175,27 +168,27 @@ form#deleteForm button:hover {
 .imgpfp {
   display: flex;
   flex-direction: column;
-  align-items: center;  /* Centra los elementos horizontalmente */
-  text-align: center;   /* Centra el texto */
+  align-items: center;
+  text-align: center;
   margin-bottom: 20px;
 }
 
 .pfp {
-  width: 150px;  /* Ajusta el tamaño de la foto de perfil */
+  width: 150px;
   height: 150px;
-  object-fit: cover;  /* Asegura que la imagen cubra el área sin distorsionarse */
-  border-radius: 50%;  /* Hace la imagen redonda */
-  margin-bottom: 10px;  /* Añade espacio entre la foto y el texto */
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 strong {
   font-size: 18px;
-  color: #B0B0B0;  /* Gris claro para los encabezados */
+  color: #B0B0B0;
   margin-bottom: 8px;
 }
 
 p {
-  color: #E0E0E0;  /* Gris claro para el texto */
+  color: #E0E0E0;
   font-size: 16px;
-  margin-bottom: 8px;  /* Espaciado entre los párrafos */
+  margin-bottom: 8px;
 }

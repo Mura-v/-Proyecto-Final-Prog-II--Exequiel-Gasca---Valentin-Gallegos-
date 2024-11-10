@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <title>blog</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="# "><img class="logotype" src="{{ url_for('static', filename='logo2.png') }}" alt="Logotipo web" width="100" height="200" border-=""></a>
+            <div class="busqueda">
+                <input type="text" placeholder="Buscar">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            <nav class="navigation">
+                <ul class="lista">
+                    <li><a href="{{ url_for('user_bp.index') }}">Inicio </a></li>
+                    <li><a href="#">Blog </a></li>
+                    <li><a href="{{ url_for('user_bp.profile') }}">Mi perfil </a></li>
+                    <li><a href="#">Contacto </a></li>
+                    <li><a href="{{ url_for('user_bp.login') }}">Iniciar sesion</a></li>
+                    <li><a href="{{ url_for('user_bp.new_user_form') }}">Registrarse</a></li>
+                    {% if 'user_id' in session %}
+                    <li><a href="{{ url_for('user_bp.logout') }}"> Cerrar Sesion </a></li>
+                    {% else %}
+                        <p> </p>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="contact">
+            {% if user %}
+            <h3>Muchas gracias por usar la pagina, {{ user.user_name }}</h3>
+            {% endif %}
+            <ul>
+                <li>Pagina creada por Exequiel Gasca y Valentin Gallegos</li>
+                <li>Trabajo integrador final de cuatrimestre</li>
+            </ul>
+        </div>
+    </main>
+    <footer class="foot">
+        <div class="footer-content">
+            <p>© <strong>2023 Calignis</strong>. <br> Todos los derechos reservados. <br>
+            <a href="politica-privacidad.html">Política de Privacidad</a></p>
+            <div class="sitemap">
+                <h4>Mapa del Sitio</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="/templates/miperfil.html">Mi perfil</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+</footer>
+</body>
+</html>

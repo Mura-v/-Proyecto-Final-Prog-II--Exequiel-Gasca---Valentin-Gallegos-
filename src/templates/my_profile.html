@@ -7,33 +7,29 @@
     <title>Perfil de Usuario</title>
   </head>
   <body>
-    <!-- Perfil de usuario -->
     <section class="form-register">
       <h4>Perfil de Usuario</h4>
 
       {% if 'user_id' in session %}
-        <!-- Mostrar información del usuario logueado -->
         <p class="imgpfp">
             <strong>Foto de perfil</strong>
             <img class="pfp" src="{{ user.image_url }}" alt="Imagen de usuario" />
           </p>
           <p><strong>Nombre de usuario:</strong> {{ user.user_name }}</p>
           <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><a href="{{ url_for('user_bp.index')}}">Inicio</a></p>
 
-        <!-- Opción para eliminar cuenta -->
         <form id="deleteForm" method="POST" action="{{ url_for('user_bp.delete_user', user_id=user.id) }}">
-            <input type="hidden" name="_method" value="DELETE">  <!-- Simulamos DELETE -->
+            <input type="hidden" name="_method" value="DELETE">
             <button type="submit">Eliminar cuenta</button>
         </form>
 
-        <!-- Opción para cerrar sesión -->
         <a href="{{ url_for('user_bp.logout') }}" class="buttons">Cerrar sesión</a>
       {% else %}
         <p>No estás logueado. <a href="{{ url_for('user_bp.login') }}">Iniciar sesión</a></p>
       {% endif %}
     </section>
 
-    <!-- Contenedor principal para publicaciones -->
     <div class="main-content">
       <h3>Posts de {{ user.user_name }}</h3>
       <div class="posts-container">
@@ -42,8 +38,11 @@
             <h4>{{ post.title }}</h4>
             <p>{{ post.content }}</p>
             {% if post.image_url %}
-              <img src="{{ post.image_url }}" alt="Imagen del post">
+            <img src="{{ url_for('static', filename=post.image_url) }}" alt="Imagen del post" style="max-width: 300px;">
             {% endif %}
+            <form action="{{ url_for('user_bp.delete_post', post_id=post.id) }}" method="POST">
+              <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar esta publicación?')">Eliminar</button>
+            </form>
             <hr>
           </div>
         {% else %}
@@ -51,25 +50,25 @@
         {% endfor %}
       </div>
 
-      <!-- Formulario para agregar un nuevo post -->
-      <form id="profileForm" method="POST" action="{{ url_for('user_bp.profile') }}" enctype="multipart/form-data">
+      <form id="profileForm" method="POST" action="{{ url_for('user_bp.create_post') }}" enctype="multipart/form-data">
         <label for="title">Título:</label>
         <input type="text" id="title" name="title" required>
 
         <label for="content">Contenido:</label>
         <textarea id="content" name="content" required></textarea>
 
-        <label for="profileImage">Agregar una foto:</label>
-        <input type="file" id="profileImage" name="profileImage" accept="image/*">
+        <label for="postImage">Imagen del post:</label>
+        <input type="file" id="postImage" name="postImage" accept="image/*">
+
         <button type="submit">Publicar</button>
       </form>
     </div>
 
     <script>
       document.getElementById('deleteForm').addEventListener('submit', function(event) {
-        event.preventDefault();  // Evita que el formulario se envíe de inmediato
+        event.preventDefault();
         if (confirm('¿Estás seguro de que deseas eliminar tu cuenta?')) {
-          this.submit();  // Si el usuario confirma, envía el formulario
+          this.submit();
         }
       });
     </script>

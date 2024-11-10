@@ -42,9 +42,17 @@ body {
     margin-right: 10px;
 }
 
+.submit{
+    background-color: #121212;
+    border: #121212;
+    cursor: pointer;
+}
+
 .busqueda i {
+    background-color: #121212;
     color: #fff;
     font-size: 1.2rem;
+    border: #121212;;
 }
 
 .navigation ul {

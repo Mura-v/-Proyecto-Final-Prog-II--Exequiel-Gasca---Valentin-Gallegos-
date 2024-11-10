@@ -14,18 +14,25 @@
     <header class="header">
         <div class="container">
             <a href="# "><img class="logotype" src="{{ url_for('static', filename='logo2.png') }}" alt="Logotipo web" width="100" height="200" border-=""></a>
-            <div class="busqueda">
-                <input type="text" placeholder="Buscar">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </div>
+            <form action="/search" method="GET" class="busqueda">
+                <input type="text" name="query" placeholder="Buscar publicaciones..." required>
+                <button type="submit" class="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </form>
             <nav class="navigation">
                 <ul class="lista">
                     <li><a href="{{ url_for('user_bp.index') }}">Inicio </a></li>
                     <li><a href="#">Blog </a></li>
                     <li><a href="{{ url_for('user_bp.profile') }}">Mi perfil </a></li>
-                    <li><a href="#">Contacto </a></li>
+                    <li><a href="{{ url_for('user_bp.contact') }}">Contacto </a></li>
                     <li><a href="{{ url_for('user_bp.login') }}">Iniciar sesion</a></li>
                     <li><a href="{{ url_for('user_bp.new_user_form') }}">Registrarse</a></li>
+                    {% if 'user_id' in session %}
+                    <li><a href="{{ url_for('user_bp.logout') }}"> Cerrar Sesion </a></li>
+                    {% else %}
+                        <p> </p>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
@@ -42,7 +49,7 @@
                 <h5>{{ post.title }}</h5>
                 <p>{{ post.content }}</p>
                 {% if post.image_url %}
-                    <img src="{{ post.image_url }}" alt="Imagen del post">
+                    <img src="{{ url_for('static', filename=post.image_url) }}" alt="Imagen del post" style="max-width: 300px;">
                 {% endif %}
                 <hr>
             </div>
@@ -50,6 +57,25 @@
             <p>No has realizado ningún post aún.</p>
         {% endfor %}
         {% endif %}
+        {% if request.args.get('query') %}
+        <h4>Resultados de búsqueda para: "{{ request.args.get('query') }}"</h4>
+
+        {% if posts %}
+            {% for post in posts %}
+                <div class="post">
+                    <h5>{{ post.title }}</h5>
+                    <p>{{ post.content }}</p>
+                    {% if post.image_url %}
+                        <img src="{{ url_for('static', filename=post.image_url) }}" alt="Imagen del post" style="max-width: 300px;">
+                    {% endif %}
+                    <hr>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No se encontraron resultados para "{{ request.args.get('query') }}"</p>
+        {% endif %}
+    {% endif %}
+</main>
     </main>
     </aside>
     <footer class="foot">
