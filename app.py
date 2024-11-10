@@ -1,5 +1,5 @@
 from src import create_app,db
-from src.models import Users
+from src.models import Users,Post
 
 app = create_app()
 

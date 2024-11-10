@@ -9,12 +9,22 @@
   <body>
     <section class="form-register">
       <h4>Register</h4>
-      <input class="complete" type="text" name="user_name"  placeholder="Put your username here"/>
-      <input class="complete" type="email" name="email" placeholder="Put your email here"/>
-        <input class="complete" type="password" name="password"  placeholder="Put your password here"/>
-      <input class="complete" type="text" name="image_url">
-      <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
-      <input class="buttons" type="submit" value="Registrarse" />
+      <form method="POST" action="{{ url_for('user_bp.create_user') if not user else url_for('user_bp.update_user', user_id=user.id) }}">
+        <input class="complete" type="text" name="user_name"  placeholder="Put your username here" value="{{ user.user_name if user else '' }}"/>
+        <input class="complete" type="email" name="email" placeholder="Put your email here" value="{{ user.email if user else '' }}"/>
+        <input class="complete" type="password" name="password"  placeholder="Put your password here" value="{{ user.password if user else '' }}"/>
+        <input class="complete" type="url" name="image_url" value="{{ user.image_url if user else '' }}"/>
+        <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+        <button class="buttons" type="submit">{{"Actualizar" if user else "Crear"}} </button>
+        {% if user %}
+        <!-- Formulario para eliminar usuario -->
+        <form method="POST" action="{{ url_for('user_bp.delete_user', user_id=user.id) }}">
+          <!-- Método DELETE utilizando un campo oculto -->
+          <input type="hidden" name="_method" value="DELETE">
+          <button class="buttons" type="submit">Borrar</button>
+        </form>
+        {% endif %}
+      </form>
       <p><a href="/templates/login.html">¿Ya tengo una cuenta?</a></p>
       <p><a href="#">Olvide mi Contraseña</a></p>
     </section>

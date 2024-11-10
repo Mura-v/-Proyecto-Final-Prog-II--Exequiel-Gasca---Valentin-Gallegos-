@@ -1,0 +1,201 @@
+/* General de la página */
+body {
+  background-color: #121212;  /* Fondo negro */
+  font-family: 'Arial', sans-serif;
+  color: #E0E0E0;  /* Gris claro para el texto */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;  /* Flexbox para columnas */
+  height: 100vh;  /* Hace que el cuerpo ocupe toda la altura de la ventana */
+}
+
+/* Contenedor principal que ocupa todo el espacio disponible */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+  margin-top: 200px;  /* Para que el contenido no quede debajo del perfil fijo */
+}
+
+/* Sección del perfil de usuario */
+section.form-register {
+  background-color: #1E1E1E;  /* Gris oscuro */
+  padding: 20px;
+  border-radius: 10px;
+  height: 160px;
+  display: flex;
+  justify-content: space-around;  /* Coloca los elementos a los extremos */
+  align-items: center;  /* Centra verticalmente los elementos */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;  /* Asegura que quede encima del contenido */
+}
+
+h4 {
+  color: #E0E0E0;
+  text-align: left;
+  font-size: 20px;
+}
+
+p {
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+strong {
+  color: #B0B0B0;  /* Gris más claro */
+}
+
+/* Formulario y botones */
+button {
+  background-color: #333333;
+  border: none;
+  padding: 8px 16px;
+  color: #E0E0E0;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-top: 8px;
+}
+
+button:hover {
+  background-color: #444444;
+}
+
+a {
+  color: #B0B0B0;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+/* Contenedor de publicaciones */
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+h3 {
+  color: #E0E0E0;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para las publicaciones */
+.post {
+  background-color: #1E1E1E;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  width: 60%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.post h4 {
+  color: #E0E0E0;
+  font-size: 20px;
+}
+
+.post p {
+  color: #B0B0B0;  /* Gris más claro */
+  font-size: 16px;
+}
+
+.post img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Formulario para agregar un post */
+form#profileForm {
+  background-color: #1E1E1E;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  max-width: 600px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+form#profileForm input, form#profileForm textarea {
+  background-color: #121212;  /* Negro */
+  border: 1px solid #333333;  /* Gris oscuro */
+  color: #E0E0E0;
+  font-size: 16px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+form#profileForm textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Estilo para el formulario de eliminación de cuenta */
+form#deleteForm {
+  text-align: center;
+  margin-top: 20px;
+}
+
+form#deleteForm button {
+  background-color: #444444;
+  font-size: 18px;
+  padding: 12px 25px;
+  margin-top: 20px;
+}
+
+form#deleteForm button:hover {
+  background-color: #555555;
+}
+
+.imgpfp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Centra los elementos horizontalmente */
+  text-align: center;   /* Centra el texto */
+  margin-bottom: 20px;
+}
+
+.pfp {
+  width: 150px;  /* Ajusta el tamaño de la foto de perfil */
+  height: 150px;
+  object-fit: cover;  /* Asegura que la imagen cubra el área sin distorsionarse */
+  border-radius: 50%;  /* Hace la imagen redonda */
+  margin-bottom: 10px;  /* Añade espacio entre la foto y el texto */
+}
+
+strong {
+  font-size: 18px;
+  color: #B0B0B0;  /* Gris claro para los encabezados */
+  margin-bottom: 8px;
+}
+
+p {
+  color: #E0E0E0;  /* Gris claro para el texto */
+  font-size: 16px;
+  margin-bottom: 8px;  /* Espaciado entre los párrafos */
+}

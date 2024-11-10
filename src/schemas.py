@@ -6,3 +6,8 @@ class UserCreateSchema(BaseModel):
     password : str
     email : EmailStr
     image_url : Optional[str] = None
+
+class PostCreateSchema(BaseModel):
+    title: str
+    content: str
+    image_url: Optional[str] = None
