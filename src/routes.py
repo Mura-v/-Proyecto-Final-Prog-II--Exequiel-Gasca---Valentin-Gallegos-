@@ -34,19 +34,21 @@ def new_user_form() -> str:
 def create_user() -> str:
     data = request.form
     try:
-        validated_user = UserCreateSchema( user_name=data['user_name'],
-                                          password=data['password'],
-                                          email=data['email'],
-                                          image_url=str(data.get('image_url', ''))
-                                          )
+        validated_user = UserCreateSchema(
+            user_name=data['user_name'],
+            password=data['password'],
+            email=data['email'],
+            image_url=str(data.get('image_url', ''))
+        )
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
 
-    new_user = Users( user_name=validated_user.user_name,
-                     password=validated_user.password,
-                     email=validated_user.email,
-                     image_url=validated_user.image_url
-                     )
+    new_user = Users(
+        user_name=validated_user.user_name,
+        password=validated_user.password,
+        email=validated_user.email,
+        image_url=validated_user.image_url
+    )
     
     db.session.add(new_user)
     db.session.commit()
