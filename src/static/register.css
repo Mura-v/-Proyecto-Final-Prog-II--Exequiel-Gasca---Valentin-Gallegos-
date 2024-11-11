@@ -1,91 +1,27 @@
-body{
-  font-family: 'Montserrat', sans-serif;
-  background-color: #2d2d2d;
+/** @format */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 .form-register {
-  background-color: #333;
-  padding: 40px 30px;
-  border-radius: 10px;
-  max-width: 500px;
-  margin: 40px auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  color: #f4f4f4;
-  text-align: center;
+  width: 400px;
+  background: rgb(65, 73, 70);
+  margin: auto;
+  margin-top: 300px;
+  padding: 30px;
+  border-radius: 6px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .form-register h4 {
-  color: #3e58af;
-  font-size: 1.8rem;
+  font-size: 22px;
   margin-bottom: 20px;
 }
 
-.form-register form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
 .complete {
-  background-color: #2d2d2d;
-  border: 1px solid #555;
-  color: #f4f4f4;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.complete::placeholder {
-  color: #bbb;
-}
-
-.complete:focus {
-  border-color: #3e58af;
-  outline: none;
-}
-
-.form-register p {
-  color: #bbb;
-  font-size: 0.9rem;
-}
-
-.form-register p a {
-  color: #355f9e;
-  font-style: italic;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.form-register p a:hover {
-  text-decoration: underline;
-}
-
-
-.btn-primary {
-  background-color: #3e58af;
-  color: #f4f4f4;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #1e3fa9;
-}
-
-.form-register .btn-primary:active {
-  background-color: #17468b;
-}
-
-.form-register p:last-of-type {
-  margin-top: 20px;
-}
-
-.form-register p:last-of-type a {
-  color: #355f9e;
-  font-style: italic;
-  font-weight: bold;
-  
+  width: 100%;
+  background: rgb(65, 73, 70);
 }

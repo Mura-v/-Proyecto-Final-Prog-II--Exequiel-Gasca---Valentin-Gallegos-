@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ url_for('static', filename='myprof.css') }}" />
-
     <title>Perfil de Usuario</title>
   </head>
   <body>
@@ -22,10 +21,10 @@
 
         <form id="deleteForm" method="POST" action="{{ url_for('user_bp.delete_user', user_id=user.id) }}">
             <input type="hidden" name="_method" value="DELETE">
-            <button class="delete" type="submit">Eliminar cuenta</button>
+            <button type="submit">Eliminar cuenta</button>
         </form>
 
-        <a href="{{ url_for('user_bp.logout') }}" class="buttons" id="cerrar_sesion">Cerrar sesión</a>
+        <a href="{{ url_for('user_bp.logout') }}" class="buttons">Cerrar sesión</a>
       {% else %}
         <p>No estás logueado. <a href="{{ url_for('user_bp.login') }}">Iniciar sesión</a></p>
       {% endif %}

@@ -8,15 +8,16 @@
   </head>
   <body>
     <section class="form-register">
-      <h4>Registrarse</h4>
+      <h4>Register</h4>
       <form method="POST" action="{{ url_for('user_bp.create_user') }}">
-        <input class="complete" type="text" name="user_name" placeholder="Pon tu nombre de usuario aquí" value="{{ user.user_name if user else '' }}" />
-        <input class="complete" type="email" name="email" placeholder="Pon tu email aquí" value="{{ user.email if user else '' }}" />
-        <input class="complete" type="password" name="password" placeholder="Pon tu contraseña aquí" />
-        <input class="complete" type="url" name="image_url" placeholder="Pon tu foto de perfil aquí" value="{{ user.image_url if user else '' }}" />
+        <input class="complete" type="text" name="user_name" placeholder="Put your username here" value="{{ user.user_name if user else '' }}" />
+        <input class="complete" type="email" name="email" placeholder="Put your email here" value="{{ user.email if user else '' }}" />
+        <input class="complete" type="password" name="password" placeholder="Put your password here" />
+        <input class="complete" type="url" name="image_url" placeholder="Put your image URL here" value="{{ user.image_url if user else '' }}" />
         
         <p>Estoy de acuerdo con <a href="#">Términos y Condiciones</a></p>
         
+        <!-- Botón de registro que redirige directamente al inicio de sesión -->
         <form action="{{ url_for('user_bp.login') }}" method="get">
           <button type="submit" class="btn btn-primary">Registrarse</button>
         </form>
